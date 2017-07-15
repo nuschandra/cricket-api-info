@@ -1,9 +1,9 @@
 var mysql=require('mysql');
 var connection=mysql.createPool({
 	host:'localhost',
-	user:'root',
-	password:'Thavach@r@7am',
-	database:'Cricket'
+	user:'b1ffd2fe23b05d',
+	password:'efd23b14',
+	database:'heroku_2202757061fad82'
 });
 
 var cricketModel={
