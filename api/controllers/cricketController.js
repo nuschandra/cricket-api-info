@@ -4,7 +4,7 @@ var cricketModel=require('../models/cricketModel');
 
 exports.listCurrentMatches=function(req,res){
 
-	cricketModel.getCurrentMatches(function(err,results){
+	cricketModel.getCurrentMatches(req.query.matchType,function(err,results){
 		if(err){
 			res.send(err);
 			console.log('Error');
