@@ -8,8 +8,8 @@ var connection=mysql.createPool({
 
 var cricketModel={
 	getCurrentMatches:function(matchType,callback){
-		console.log(matchType);
-		if(matchType==='internationals'){
+
+		if(matchType==='INTERNATIONALS'){
 			connection.query('SELECT * from CURRENT_MATCHES WHERE MATCH_TYPE in (select tournament_name from tournament_list where country_name=?)',matchType,callback);
 		}
 		else{
