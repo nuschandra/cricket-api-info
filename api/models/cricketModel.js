@@ -9,12 +9,19 @@ var connection=mysql.createPool({
 var cricketModel={
 	getCurrentMatches:function(matchType,callback){
 
-		if(matchType==='INTERNATIONALS'){
+		if(matchType==='INTERNATIONALS' || matchType==='WOMEN'){
 			connection.query('SELECT * from CURRENT_MATCHES WHERE MATCH_TYPE in (select tournament_name from tournament_list where country_name=?)',matchType,callback);
+		}
+		else if(matchType==='DOMESTIC'){
+			connection.query('SELECT * from CURRENT_MATCHES WHERE MATCH_TYPE in (select tournament_name from tournament_list where country_name<>"INTERNATIONALS")',callback);
+
+		}
+		else if(matchType==='OTHERS'){
+			connection.query('SELECT * from CURRENT_MATCHES WHERE MATCH_TYPE not in (select tournament_name from tournament_list)',callback);
+
 		}
 		else{
 			connection.query('SELECT * from CURRENT_MATCHES',callback);
-
 		}
 	}
 }
