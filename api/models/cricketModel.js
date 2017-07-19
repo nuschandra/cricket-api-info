@@ -13,7 +13,7 @@ var cricketModel={
 			connection.query('SELECT * from CURRENT_MATCHES WHERE MATCH_TYPE in (select tournament_name from tournament_list where country_name=?)',matchType,callback);
 		}
 		else if(matchType==='DOMESTIC'){
-			connection.query('SELECT * from CURRENT_MATCHES WHERE MATCH_TYPE in (select tournament_name from tournament_list where country_name<>"INTERNATIONALS")',callback);
+			connection.query('SELECT CURRENT_MATCHES.*, COUNTRY_NAME from CURRENT_MATCHES INNER JOIN TOURNAMENT_LIST ON CURRENT_MATCHES.MATCH_TYPE=TOURNAMENT_LIST.TOURNAMENT_NAME and TOURNAMENT_LIST.TOURNAMENT_NAME <>"INTERNATIONALS"',callback);
 
 		}
 		else if(matchType==='OTHERS'){

@@ -7,6 +7,7 @@ exports.listCurrentMatches=function(req,res){
 	cricketModel.getCurrentMatches(req.query.matchType,function(err,results){
 		if(err){
 			res.send(err);
+			console.log(err);
 			console.log('Error');
 		}
 		else{
