@@ -5,4 +5,7 @@ module.exports=function(app){
 
 	app.route('/currentMatches?')
 		.get(cricketController.listCurrentMatches);
+
+	app.route('/currentScores?')
+		.get(cricketController.currentScore);
 };
