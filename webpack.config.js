@@ -5,6 +5,6 @@ module.exports = {
 
   	output: {
     	path: '/public/build/',
-    	filename: 'bundle.js',
+    	filename: 'bundle.js'
   	}
 }
