@@ -4,8 +4,7 @@
   "description": "api's that fetch cricket data",
   "main": "index.js",
   "scripts": {
-    "start":"node server.js",
-    "dev": "npm start & webpack"
+    "start":"webpack",
   },
   "author": "chandra",
   "license": "ISC",
