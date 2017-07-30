@@ -11,8 +11,8 @@ const Scores = ({teamScores, batsmen, bowlers, matchStatus, matchId}) => {
         <div className='static-page-body'>
           <div className='scores-body'>
             <div className='team-details'>
-              <h2>{teamScores.teamOne}</h1>
-              <h2>{teamScores.teamTwo}</h1>
+              <h2>{teamScores.teamOne}</h2>
+              <h2>{teamScores.teamTwo}</h2>
               <p className='match-status'>{matchStatus}</p>
             </div>
           </div>

@@ -4,7 +4,7 @@
   "description": "api's that fetch cricket data",
   "main": "index.js",
   "scripts": {
-    "start":"webpack"
+    "start":"node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
   },
   "author": "chandra",
   "license": "ISC",
@@ -19,6 +19,11 @@
     "react-dom":"15.6.1",
     "react-weui":"1.1.3",
     "ejs":"2.5.7",
-    "webpack":"3.4.1"
+    "webpack":"3.4.1",
+    "babel-core": "^6.2.1",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18",
+    "webpack-dev-server":"2.6.1" 
   }
 }
