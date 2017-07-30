@@ -90,7 +90,8 @@ exports.currentScore=function(req,res){
 				Scores[batsmen].push(batsmenTwo);
 				Scores[bowlers].push(bowlerOne);
 				Scores[bowlers].push(bowlerTwo);
-				res.send(JSON.stringify(Scores));
+				var scoreJson=JSON.stringify(Scores);
+				res.render('./index',{scores:scoreJson,title:'Live Scores'});
 			}
 		});
 	}

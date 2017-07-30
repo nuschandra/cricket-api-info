@@ -4,7 +4,8 @@
   "description": "api's that fetch cricket data",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"node server.js",
+    "dev": "npm start & webpack"
   },
   "author": "chandra",
   "license": "ISC",
@@ -14,6 +15,11 @@
     "request":"2.81.0",
     "moment":"2.18.1",
     "config":"1.26.1",
-    "mysql":"2.13.0"
+    "mysql":"2.13.0",
+    "react":"15.6.1",
+    "react-dom":"15.6.1",
+    "react-weui":"1.1.3",
+    "ejs":"2.5.7",
+    "webpack":"3.4.1"
   }
 }

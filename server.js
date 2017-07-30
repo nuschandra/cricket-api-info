@@ -3,6 +3,7 @@ var express=require('express'),
 	port=process.env.PORT||3000,
 	bodyParser=require('body-parser');
 
+app.set('view engine','ejs')
 var model=require('./api/models/cricketModel');
 app.use(bodyParser.json());
 
