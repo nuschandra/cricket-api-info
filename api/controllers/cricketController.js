@@ -32,6 +32,7 @@ exports.currentScore=function(req,res){
 		var teamTwo='teamTwo'
 		var batsmen='batsmen'
 		var bowlers='bowlers'
+		var match='match'
 		Scores[batsmen]=[]
 		Scores[bowlers]=[]
 		cricketModel.getCurrentMatches(req.query.matchType,req.query.id,function(err,results){
@@ -44,6 +45,7 @@ exports.currentScore=function(req,res){
 				var stringify=JSON.stringify(results);
 				var results=JSON.parse(stringify);
 				Scores[matchStatus]=results[0]["MATCH_STATUS"];
+				Scores[match]=results[0]["TEAM_1"] + ' v ' + results[0]["TEAM_2"] + ", " + results[0]["MATCH_DETAILS"]
 			}
 		});
 		cricketModel.getCurrentScores(req.query.id,function(err,results){
@@ -91,7 +93,7 @@ exports.currentScore=function(req,res){
 				Scores[bowlers].push(bowlerOne);
 				Scores[bowlers].push(bowlerTwo);
 				var scoreJson=JSON.stringify(Scores);
-				res.render('./index',{scores:scoreJson,title:'Live Scores'});
+				res.send(scoreJson);
 			}
 		});
 	}
