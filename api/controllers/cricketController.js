@@ -23,6 +23,7 @@ exports.currentScore=function(req,res){
 		res.send(JSON.stringify({"Error":"Match ID not present"}));
 	}
 	else{
+		var ScoresArray=[]
 		var Scores={}
 		var matchId='matchId'
 		var matchStatus='matchStatus'
@@ -92,7 +93,8 @@ exports.currentScore=function(req,res){
 				Scores[batsmen].push(batsmenTwo);
 				Scores[bowlers].push(bowlerOne);
 				Scores[bowlers].push(bowlerTwo);
-				var scoreJson=JSON.stringify(Scores);
+				ScoresArray.push(Scores)
+				var scoreJson=JSON.stringify(ScoresArray);
 				res.send(scoreJson);
 			}
 		});
