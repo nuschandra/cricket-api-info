@@ -4,16 +4,17 @@
   "description": "api's that fetch cricket data",
   "main": "index.js",
   "scripts": {
-    "start":"node server.js"
+    "start": "node server.js"
   },
   "author": "chandra",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "1.17.2",
+    "config": "1.26.1",
+    "cors": "^2.8.4",
     "express": "^4.15.3",
-    "body-parser":"1.17.2",
-    "request":"2.81.0",
-    "moment":"2.18.1",
-    "config":"1.26.1",
-    "mysql":"2.13.0"
+    "moment": "2.18.1",
+    "mysql": "2.13.0",
+    "request": "2.81.0"
   }
 }
